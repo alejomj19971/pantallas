@@ -4,6 +4,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import ProfileScreen from './assets/components/ProfileScreen';
 import LogIn from './assets/components/LogIn';
+import Administrador from './assets/components/Administrador';
 const Stack= createNativeStackNavigator();
 export default function App() {
   //Rutas
@@ -13,6 +14,7 @@ export default function App() {
       <NavigationContainer>
         <Stack.Navigator initialRouteName='LogIn'>
           <Stack.Screen  name="LogIn" component={LogIn} options={{title:'Sing In'}} />
+          <Stack.Screen  name="Admin" component={Administrador} options={{title:'Administrador'}} />
           <Stack.Screen  name="Contacts" component={ContactScreen} options={{title:'Contactenos'}} />
           <Stack.Screen name="Home" component={HomeScreen} options={{title:'Inicio'}} />
           <Stack.Screen name="Profile" component={ProfileScreen} options={{title:'Perfil de Usuario'}}/>

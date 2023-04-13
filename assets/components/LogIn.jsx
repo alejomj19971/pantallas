@@ -14,12 +14,14 @@ let usuarios=[
     {
         username:'amj',
         password:1234,
-        nombre:'Alejandro'
+        nombre:'Alejandro',
+        rol:'admin'
     },
     {
         username:'abc',
         password:'zzz',
-        nombre:'Pedro'
+        nombre:'Pedro',
+        rol:'usuario'
     }
 
 
@@ -43,8 +45,14 @@ function LogIn({navigation}){
             if(usuario.username==nombreUsuario  && usuario.password==password){
                 alert('Usuario encontrado')
                 permiso=true
-                navigation.navigate('Home',{fullname:usuario.nombre})
-                return
+                if(usuario.rol==='admin'){
+                    navigation.navigate('Admin',{fullname:usuario.nombre})
+                }
+                else{
+                    navigation.navigate('Home',{fullname:usuario.nombre})
+                    return
+                }
+                
             }
            
         })
